@@ -5,6 +5,7 @@ import RecipeList from './components/RecipeList/RecipeList';
 import { config } from './config';
 
 import AppBar from '@material-ui/core/AppBar';
+import Loader from './components/Loader/Loader';
 
 class App extends Component {
   state = {
@@ -44,7 +45,7 @@ class App extends Component {
   };
 
   render() {
-    const { recipes } = this.state;
+    const { recipes, loading } = this.state;
 
     return (
       <Fragment>
@@ -52,7 +53,7 @@ class App extends Component {
           <h1>Recipe Search</h1>
         </AppBar>
         <Form getRecipes={this.getRecipes} />
-        <RecipeList recipes={recipes} />
+        {loading ? <Loader /> : <RecipeList recipes={recipes} />}
       </Fragment>
     );
   }

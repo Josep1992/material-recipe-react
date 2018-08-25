@@ -7,6 +7,13 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import { config } from '../../config';
 
+const cardStyles = {
+  maxWidth: 400,
+  margin: 'auto',
+  marginTop: '10px',
+  fontSize: '16px',
+};
+
 class Recipe extends Component {
   state = {
     recipe: [],
@@ -38,7 +45,7 @@ class Recipe extends Component {
     return (
       <Fragment>
         {this.state.recipe.length !== 0 && (
-          <Card>
+          <Card style={cardStyles}>
             <CardMedia
               component="img"
               height="140"
