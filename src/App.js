@@ -21,6 +21,10 @@ class App extends Component {
     //Value from the count input
     const count = e.target.elements.recipeCount.value;
 
+    this.setState({
+      loading: !this.state.loading,
+    });
+
     if (recipe && count) {
       const request = await fetch(
         `https://cors-anywhere.herokuapp.com/${this.state.uri}${
