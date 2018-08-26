@@ -38,7 +38,8 @@ const Form = ({ getRecipes, classes }) => (
 
 const FormContainer = styled.form`
   margin: 0 auto;
-  width: 500px;
+  min-width: 250px;
+  max-width: 350px;
   padding: 1em;
 `;
 
