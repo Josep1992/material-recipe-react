@@ -4,7 +4,6 @@ import Form from './components/Form/Form';
 import RecipeList from './components/RecipeList/RecipeList';
 import { config } from './config';
 
-import AppBar from '@material-ui/core/AppBar';
 import Loader from './components/Loader/Loader';
 
 class App extends Component {
@@ -49,9 +48,6 @@ class App extends Component {
 
     return (
       <Fragment>
-        <AppBar position="static">
-          <h1>Recipe Search</h1>
-        </AppBar>
         <Form getRecipes={this.getRecipes} />
         {loading ? <Loader /> : <RecipeList recipes={recipes} />}
       </Fragment>
