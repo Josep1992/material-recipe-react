@@ -3,14 +3,15 @@ import Card from '@material-ui/core/Card';
 import { Link } from 'react-router-dom';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
+
 import { config } from '../../config';
 
 const cardStyles = {
   maxWidth: 400,
   margin: 'auto',
-  marginTop: '10px',
+  marginTop: '30px',
   fontSize: '16px',
 };
 
@@ -46,19 +47,22 @@ class Recipe extends Component {
       <Fragment>
         {this.state.recipe.length !== 0 && (
           <Card style={cardStyles}>
-            <CardMedia
-              component="img"
-              height="140"
-              image={image_url}
-              title={title}
-            />
+            <Image src={image_url} />
             <CardContent>
-              <h1>{title}</h1>
-              <span>{recipe_id}</span>
+              <h2>{title}</h2>
+              <span>Recipe #{recipe_id}</span>
               <br />
+              <span>Recipe Rank {social_rank}</span>
+              <br />
+              <p>
+                Recipe Source:
+                <a href={source_url} target="_blank" rel="noonreferer">
+                  {publisher}
+                </a>
+              </p>
               <CardActions>
-                <Button>
-                  <Link to={{ pathname: publisher }}>Link Here</Link>
+                <Button size="small" color="primary">
+                  <Link to="/">Home</Link>
                 </Button>
               </CardActions>
             </CardContent>
@@ -68,5 +72,12 @@ class Recipe extends Component {
     );
   }
 }
+
+export const Image = styled.img`
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: auto;
+`;
 
 export default Recipe;
