@@ -11,6 +11,7 @@ const styles = () => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
+    padding: '20px',
   },
   gridList: {
     width: 500,
