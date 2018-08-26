@@ -24,7 +24,7 @@ const styles = () => ({
 
 const RecipesList = ({ recipes, classes }) => (
   <div className={classes.root}>
-    {recipes.length !== 0 ? (
+    {recipes.length !== 0 && (
       <GridList cols={3} cellHeight={200} classes={classes.gridList}>
         {recipes.map(recipe => (
           <GridListTile key={recipe.recipe_id} recipe={recipe} cols={1}>
@@ -47,8 +47,6 @@ const RecipesList = ({ recipes, classes }) => (
           </GridListTile>
         ))}
       </GridList>
-    ) : (
-      console.log(recipes)
     )}
   </div>
 );
